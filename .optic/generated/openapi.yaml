@@ -1,0 +1,120 @@
+openapi: 3.0.1
+info:
+ title: untitled API
+ version: '77'
+paths:
+ /posts:
+  get:
+   operationId: request_pZAz65LivR
+   summary: Get posts
+   responses:
+    '200':
+     content:
+      application/json:
+       schema:
+        type: array
+        items:
+         type: object
+         required:
+          - comments
+          - id
+          - message
+         properties:
+          comments:
+           type: object
+           required:
+            - '1'
+            - '2'
+           properties:
+            '1':
+             type: string
+            '2':
+             type: string
+          id:
+           type: number
+          message:
+           type: string
+     description: ''
+  post:
+   operationId: request_mqXpWfzTd3
+   summary: Create a post
+   requestBody:
+    content:
+     application/json:
+      schema:
+       type: object
+       required:
+        - id
+        - message
+       properties:
+        id:
+         type: number
+        message:
+         type: string
+   responses:
+    '200':
+     content:
+      application/json:
+       schema:
+        type: array
+        items:
+         type: object
+         required:
+          - id
+          - message
+         properties:
+          comments:
+           type: object
+           required:
+            - '1'
+            - '2'
+           properties:
+            '1':
+             type: string
+            '2':
+             type: string
+          id:
+           type: number
+          message:
+           type: string
+     description: ''
+  parameters: []
+ '/posts/{id}':
+  get:
+   operationId: request_wXUZvnxtS2
+   summary: Get a single post
+   responses:
+    '200':
+     content:
+      application/json:
+       schema:
+        type: object
+        required:
+         - comments
+         - id
+         - message
+        properties:
+         comments:
+          type: object
+          required:
+           - '1'
+           - '2'
+          properties:
+           '1':
+            type: string
+           '2':
+            type: string
+         id:
+          type: number
+         message:
+          type: string
+     description: ''
+  parameters:
+   -
+    in: path
+    name: id
+    required: true
+    schema:
+     type: string
+components:
+ schemas: {}

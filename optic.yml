@@ -1,0 +1,11 @@
+name: "Simple Backend"
+tasks:
+  start:
+    command: "yarn start"
+    inboundUrl: http://localhost:4000
+  run-tests:
+    command: newman run https://www.getpostman.com/collections/e904977f1e1b95c5f9b7
+    useTask: start
+ignoreRequests:
+  # For more information on configuration, visit https://www.useoptic.com/docs/faqs-and-troubleshooting/captures
+  - OPTIONS (.*)
